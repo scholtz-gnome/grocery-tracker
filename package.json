@@ -1,0 +1,22 @@
+{
+  "name": "grocery-tracker",
+  "version": "1.0.0",
+  "description": "An app made with HTML, CSS and JS. Tracks your grocery items like a typical to-do list, but it also calculates your expenses.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scholtz-gnome/grocery-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scholtz-gnome/grocery-tracker/issues"
+  },
+  "homepage": "https://github.com/scholtz-gnome/grocery-tracker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
