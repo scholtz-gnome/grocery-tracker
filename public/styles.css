@@ -1,5 +1,22 @@
 body {
   margin: 0px;
   font-family: "Lato", sans-serif;
-  padding: 15px;
+}
+
+header {
+  text-align: center;
+}
+
+/* Footer Styles */
+footer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  min-height: 120px;
+  padding: 5px 15px;
+  flex: 1 0 260px;
+  background: #222;
+  color: white;
 }
