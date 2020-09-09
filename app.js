@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const listsRouter = require("./routes/listsRouter.js");
 // set the template view engine
 app.set("view engine", "ejs");
 // app.set(express.static("public"));
@@ -10,6 +11,7 @@ app.listen(3000, () => {
 
 // static files
 app.use(express.static("public"));
+app.use("/lists/", listsRouter);
 
 //routes
 // HOME PAGE
@@ -20,6 +22,11 @@ app.get("/", (req, res) => {
 // ABOUT PAGE
 app.get("/about", (req, res) => {
   res.render("about", { title: "ABOUT" });
+});
+
+// LISTS PAGE
+app.get("/lists", (req, res) => {
+  res.render("lists", { title: "LISTS" });
 });
 
 // USER PAGE
