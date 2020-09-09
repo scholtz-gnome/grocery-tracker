@@ -7,6 +7,17 @@ header {
   text-align: center;
 }
 
+/* Main Styles */
+main ul {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+main li {
+  min-height: 25px;
+}
+
 /* Footer Styles */
 footer {
   display: flex;
