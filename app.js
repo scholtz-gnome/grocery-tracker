@@ -1,12 +1,20 @@
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
 const listsRouter = require("./routes/listsRouter.js");
 
-app.set("view engine", "ejs");
+// connect to DB 
+const dbURI = "mongodb+srv://scholtz-gnome:scholtz-gnome-password@node-tutorial.scb5o.mongodb.net/grocery-tracker?retryWrites=true&w=majority";
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(result => {
+    app.listen(3000, () => {
+      console.log("app.js: - - Listening for requests on port 3000 - - ");
+    });
+    console.log("app.js: - - Connected to the Database - - ");
+  })
+  .catch(err => console.log(err));
 
-app.listen(3000, () => {
-  console.log(" - - Listening for requests on port 3000 - - ");
-});
+app.set("view engine", "ejs");
 
 // middleware & static files
 app.use(express.static("public"));
