@@ -3,13 +3,9 @@ const listsRouter = express.Router();
 const List = require("../models/list.js");
 
 listsRouter.get("/view", (req, res) => {
-  res.render("view-lists", { title: "VIEW LISTS"});
-  // List.find()
-  //   .then(result => {
-  //     res.render("view-lists", { title: "VIEW LISTS", result });
-  //   })
-  //   .catch(err => console.log(err));
-
+  List.find()
+    .then(result => res.render("view-lists", { title: "VIEW LISTS", result }))
+    .catch(err => console.log(err));
 });
 
 listsRouter.get("/create", (req, res) => {
