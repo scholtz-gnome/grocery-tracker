@@ -1,19 +1,18 @@
 const express = require("express");
 const app = express();
 const listsRouter = require("./routes/listsRouter.js");
-// set the template view engine
+
 app.set("view engine", "ejs");
-// app.set(express.static("public"));
 
 app.listen(3000, () => {
   console.log(" - - Listening for requests on port 3000 - - ");
 });
 
-// static files
+// middleware & static files
 app.use(express.static("public"));
 app.use("/lists/", listsRouter);
 
-//routes
+// main routes
 // HOME PAGE
 app.get("/", (req, res) => {
   res.render("index", { title: "HOME" });
