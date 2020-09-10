@@ -1,57 +1,12 @@
 const express = require("express");
 const listsRouter = express.Router();
-const List = require("../models/list.js");
+const listController = require("../controllers/listController");
 
-listsRouter.get("/view", (req, res) => {
-  List.find()
-    .then(result => res.render("view-lists", { title: "VIEW LISTS", result }))
-    .catch(err => console.log(err));
-});
-
-listsRouter.get("/create", (req, res) => {
-  res.render("create-list", { title: "CREATE LIST" });
-});
-
-listsRouter.post("/view", (req, res) => {
-  const list = new List(req.body);
-  list.save()
-    .then(result => {
-      res.redirect("/lists/view");
-    })
-    .catch(err => console.log(err));
-});
-
-listsRouter.get("/edit/:id", (req, res) => {
-  const id = req.params.id;
-  const list = List.findById(id)
-    .then(result => {
-      res.render("edit", { title: result.title, list: result });
-    })
-    .catch(err => console.log(err));
-});
-
-listsRouter.post("/edit/:id", (req, res) => {
-  List.findById(req.params.id)
-    .then(result => {
-      result.items.push(req.body.add)
-      result.save()
-        .then(result => {
-          res.redirect(`/lists/${req.url}`);
-        })
-        .catch(err => console.log(err));
-    })
-    .catch(err => console.log(err));
-});
-
-listsRouter.delete("/edit/:id", (req, res) => {
-  const id = req.params.id;
-
-  List.findByIdAndDelete(id)
-    .then(result => {
-      res.json({ redirect: "/lists/view" });
-    })
-    .catch(err => console.log(err));
-
-});
+listsRouter.get("/view", listController.lists_view);
+listsRouter.post("/view", listController.list_create_post);
+listsRouter.get("/create", listController.list_create);
+listsRouter.get("/edit/:id", listController.list_edit);
+listsRouter.post("/edit/:id", listController.list_edit_post);
+listsRouter.delete("/edit/:id", listController.list_edit_delete);
 
 module.exports = listsRouter;
