@@ -1,23 +1,44 @@
 body {
   margin: 0px;
-  font-family: "Lato", sans-serif;
+  font-family: 'Zilla Slab', serif;
+  background-image: url();
 }
 
-/* Nav Styles */
-nav {
-  padding: 20px;
-  background: pink;
-}
+/* Selecting all specified elements of kind */
 
-.navList {
-  list-style-type: none;
+a {
   text-decoration: none;
-  font-size: 18px;
+}
+
+ul {
+  list-style-type: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.navListItem:hover {
+li {
+  display: grid;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  border: 2px dotted black;
+  padding: 10px;
+}
+
+/* Nav Styles */
+nav {
+  padding: 10px;
+  background: pink;
+}
+
+.navList {
+  font-size: 20px;
+  padding-left: 0px;
+}
+
+nav a:hover {
   color: white;
 }
 
