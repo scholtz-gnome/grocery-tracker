@@ -1,17 +1,27 @@
 const express = require("express");
 const app = express();
-// set the template view engine
+const mongoose = require("mongoose");
+const listsRouter = require("./routes/listsRouter.js");
+
+// connect to DB 
+const dbURI = "mongodb+srv://olivia-scholtz:olivia-scholtz-password@node-tutorial.scb5o.mongodb.net/grocery-tracker?retryWrites=true&w=majority";
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(result => {
+    app.listen(3000, () => {
+      console.log("app.js: - - Listening for requests on port 3000 - - ");
+    });
+    console.log("app.js: - - Connected to the Database - - ");
+  })
+  .catch(err => console.log(err));
+
 app.set("view engine", "ejs");
-// app.set(express.static("public"));
 
-app.listen(3000, () => {
-  console.log(" - - Listening for requests on port 3000 - - ");
-});
-
-// static files
+// middleware & static files
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use("/lists/", listsRouter);
 
-//routes
+// main routes
 // HOME PAGE
 app.get("/", (req, res) => {
   res.render("index", { title: "HOME" });
@@ -20,6 +30,11 @@ app.get("/", (req, res) => {
 // ABOUT PAGE
 app.get("/about", (req, res) => {
   res.render("about", { title: "ABOUT" });
+});
+
+// LISTS PAGE
+app.get("/lists", (req, res) => {
+  res.render("lists", { title: "LISTS" });
 });
 
 // USER PAGE

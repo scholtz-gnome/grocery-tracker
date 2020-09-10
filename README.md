@@ -10,5 +10,6 @@ In your package.json file, under dependencies, you should have:
 "dependencies": {
   "ejs": "^3.1.5",
   "express": "^4.17.1",
+  "mongoose": "^5.10.3",
   "nodemon": "^2.0.4"
 }
