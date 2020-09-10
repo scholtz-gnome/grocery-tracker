@@ -12,6 +12,7 @@
   <main>
     <h2>Add items to list</h2>
     <h3><%= list.title %></h3>
+    <button class="delete" data-doc="<%= list._id %>">Delete List</button>
     <div>
       <ul>
         <% if (list.items.length === 0) { %>
@@ -29,12 +30,27 @@
         <input type="text" name="add" id="add">
       </div>
       <div>
-        <button>Add Item to List</button>
+        <button> + </button>
       </div>
     </form>
   </main>
 
   <%- include("./partials/footer.ejs") %>
+  <script>
 
+  const deleteButton = document.querySelector("button.delete");
+
+  deleteButton.addEventListener("click", () => {
+    const endpoint = `/lists/edit/${deleteButton.dataset.doc}`;
+
+    fetch(endpoint, {
+      method: "DELETE"
+    })
+    .then(response => response.json())
+    .then(data => window.location.href = data.redirect)
+    .catch(err => console.log(err));
+  });
+
+  </script>
 </body>
 </html>

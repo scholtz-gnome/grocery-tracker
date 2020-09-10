@@ -43,4 +43,15 @@ listsRouter.post("/edit/:id", (req, res) => {
     .catch(err => console.log(err));
 });
 
+listsRouter.delete("/edit/:id", (req, res) => {
+  const id = req.params.id;
+
+  List.findByIdAndDelete(id)
+    .then(result => {
+      res.json({ redirect: "/lists/view" });
+    })
+    .catch(err => console.log(err));
+
+});
+
 module.exports = listsRouter;
