@@ -30,14 +30,22 @@ main {
   padding: 20px;
 }
 
-main ul {
+.sub-nav {
   display: flex;
-  flex-direction: column;
-  text-decoration: none;
 }
 
-main li {
-  min-height: 25px;
+.sub-nav {
+  flex: 1 0 50px;
+  list-style-type: none;
+}
+
+.sub-nav li {
+  flex-grow: 1;
+}
+
+.sub-nav a {
+  text-decoration: none;
+  padding: 15px;
 }
 
 /* Footer Styles */
