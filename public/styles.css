@@ -154,6 +154,10 @@ footer {
   min-width: 190px;
 }
 
+.list-items p {
+  text-align: center;
+}
+
 .edit-list ul {
   padding: 0px;
   display: flex;
