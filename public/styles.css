@@ -2,6 +2,9 @@ body {
   margin: 0px;
   font-family: 'Zilla Slab', serif;
   background-image: url();
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 /* Selecting all specified elements of kind */
@@ -49,6 +52,7 @@ header {
 /* Main Styles */
 main {
   padding: 20px;
+  flex-grow: 1;
 }
 
 main ul {
