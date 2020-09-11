@@ -49,10 +49,20 @@ const list_edit_delete = (req, res) => {
 }
 
 const list_edit_item_delete = (req, res) => {
-  const id = req.params.id;
+
+  const id = req.params.id; //id of object
+  const item = req.params.item; // string of item (eg. "Eggs")
+
   List.findById(id)
     .then(result => {
-      res.json();
+      const itemIndex = result.items.indexOf(item);
+      const myArray = result.items.filter((element, i) => {
+        console.log(element, i);
+        return i !== itemIndex;
+      });
+      result.updateOne({ items: myArray })
+        .then(result => res.json({ redirect: `/lists/edit/${id}` }))
+        .catch(err => console.log(err));
     })
     .catch(err => console.log(err));
 }

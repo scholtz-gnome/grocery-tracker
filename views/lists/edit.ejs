@@ -55,7 +55,7 @@
     item.addEventListener("click", () => {
       console.log(item.dataset.doc);
       console.log(item.dataset.id);
-      const endpoint = `/lists/edit-item/${item.dataset.id}`;
+      const endpoint = `/lists/edit-item/${item.dataset.id}/${item.dataset.doc}`;
 
       fetch(endpoint, {
         method: "DELETE"
