@@ -170,6 +170,16 @@ footer {
   width: 100%;
 }
 
+.edit-list ul li {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* options popup */
+.hide {
+  opacity: 0;
+}
+
 /* Media Queries */
 @media screen and (max-width: 803px) {
 

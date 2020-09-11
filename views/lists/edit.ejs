@@ -29,7 +29,7 @@
         </div>
 
         <button><a href="/lists/create">New List</a></button>
-        <button class="delete" data-doc="<%= list._id %>"><a href="">Delete List</a></button>
+        <button class="deleteList" data-doc="<%= list._id %>"><a href="">Delete List</a></button>
 
       </section>
 
@@ -41,7 +41,12 @@
                 <p>There are currently no items in this list</p>
               <% } else { %>
                 <% list.items.forEach(item => { %>
-                  <li><button class="delete-item" data-id="<%= list._id %>" data-doc="<%= item %>">Delete</button><%= item %></li>
+                  <li>
+                    <%= item %><button><i class="fas fa-ellipsis-h" data-item="<%= item %>"></i></button>
+                    <div class="options hide" data-item="<%= item %>">
+                      <button class="trashcan" data-id="<%= list._id %>" data-doc="<%= item %>" class="trashcan"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                  </li>
                   <%  %>
                 <% }) %>
               <% } %>
