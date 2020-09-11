@@ -56,9 +56,8 @@ const list_edit_item_delete = (req, res) => {
   List.findById(id)
     .then(result => {
       const itemIndex = result.items.indexOf(item);
-      const updatedItems = result.items.filter((element, i) => {
-        return i !== itemIndex;
-      });
+      const updatedItems = result.items.filter((element, i) => i !== itemIndex);
+      
       result.updateOne({ items: updatedItems })
         .then(result => res.json({ redirect: `/lists/edit/${id}` }))
         .catch(err => console.log(err));
