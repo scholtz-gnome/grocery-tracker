@@ -34,7 +34,7 @@ app.get("/about", (req, res) => {
 
 // LISTS PAGE
 app.get("/lists", (req, res) => {
-  res.render("lists", { title: "LISTS" });
+  res.render("lists/lists", { title: "LISTS" });
 });
 
 // USER PAGE

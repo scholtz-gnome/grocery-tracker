@@ -51,22 +51,14 @@ main {
   padding: 20px;
 }
 
-.sub-nav {
+main ul {
   display: flex;
-}
-
-.sub-nav {
-  flex: 1 0 50px;
-  list-style-type: none;
-}
-
-.sub-nav li {
-  flex-grow: 1;
-}
-
-.sub-nav a {
+  flex-direction: column;
   text-decoration: none;
-  padding: 15px;
+}
+
+main li {
+  min-height: 25px;
 }
 
 /* Footer Styles */
@@ -81,4 +73,30 @@ footer {
   flex: 1 0 260px;
   background: #222;
   color: white;
+}
+
+/* edit.ejs */
+.edit-list {
+  display: inline-block;
+}
+
+.edit-list {
+  width: 250px;
+}
+
+.edit-list ul {
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-list li {
+  padding: 5px;
+  display: inline-block;
+  width: 100%;
+}
+
+.edit-list li:hover {
+  padding: 5px;
 }

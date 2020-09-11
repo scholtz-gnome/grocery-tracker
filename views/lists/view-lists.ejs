@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include("./partials/head.ejs") %>
+  <%- include("../partials/head.ejs") %>
 <body>
-  <%- include("./partials/nav.ejs") %>
+  <%- include("../partials/nav.ejs") %>
   <header>
     <h1>View Lists</h1>
   </header>
 
-  <ul class="sub-nav">
-    <li><a href="/lists/view">View Lists</a></li>
-    <li><a href="/lists/create">Create List</a></li>
-  </ul>
+  <%- include("../partials/sub-nav.ejs") %>
   
   <main>
     <div>
@@ -27,7 +24,7 @@
     </div>
   </main>
 
-  <%- include("./partials/footer.ejs") %>
+  <%- include("../partials/footer.ejs") %>
 
 </body>
 </html>
