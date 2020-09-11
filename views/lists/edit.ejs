@@ -9,28 +9,48 @@
 
   <%- include("../partials/sub-nav.ejs") %>
   
-  <main>
+  <main id="edit-ejs">
+
     <h2>Add items to list</h2>
-    <h3><%= list.title %></h3>
-    <button class="delete" data-doc="<%= list._id %>">Delete List</button>
-    <form action="/lists/edit/<%= list.id %>" method="post">
-      <div>
-        <label for="add"><button class="add"> + </button></label>
-        <input type="text" name="add" id="add" autofocus>
-      </div>
-    </form>
-    <div class="edit-list">
-      <ul>
-        <% if (list.items.length === 0) { %>
-          <p>There are currently no items in this list</p>
-        <% } else { %>
-          <% list.items.forEach(item => { %>
-            <li><button class="delete-item" data-id="<%= list._id %>" data-doc="<%= item %>">Delete</button><%= item %></li>
-            <%  %>
-          <% }) %>
-        <% } %>
-      </ul>
-    </div>
+
+    <article class="edit-article">
+      <section class="list-details">
+
+        <h3><%= list.title %></h3>
+        <div class="form">
+          <form action="/lists/edit/<%= list.id %>" method="post">
+            <div>
+              <input type="text" name="add" id="add" autofocus>
+            </div>
+            <div>
+              <button class="add"> + </button>
+            </div>
+          </form>
+        </div>
+
+        <button><a href="/lists/create">New List</a></button>
+        <button class="delete" data-doc="<%= list._id %>">Delete List</button>
+
+      </section>
+
+      <section class="list-items">
+
+          <div class="edit-list">
+            <ul>
+              <% if (list.items.length === 0) { %>
+                <p>There are currently no items in this list</p>
+              <% } else { %>
+                <% list.items.forEach(item => { %>
+                  <li><button class="delete-item" data-id="<%= list._id %>" data-doc="<%= item %>">Delete</button><%= item %></li>
+                  <%  %>
+                <% }) %>
+              <% } %>
+            </ul>
+          </div>
+
+      </section>
+    </article>
+    
   </main>
 
   <%- include("../partials/footer.ejs") %>

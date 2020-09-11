@@ -51,14 +51,10 @@ header {
 
 /* Main Styles */
 main {
-  padding: 20px;
+  padding: 20px 0px;
   flex-grow: 1;
-}
-
-main ul {
   display: flex;
   flex-direction: column;
-  text-decoration: none;
 }
 
 main li {
@@ -68,39 +64,122 @@ main li {
 /* Footer Styles */
 footer {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .box {
-  min-height: 120px;
+  min-height: 50px;
+  max-height: 90px;
   padding: 5px 15px;
-  flex: 1 0 260px;
+  flex: 1 0 100px;
   background: #222;
   color: white;
+  text-align: center;
 }
 
 /* edit.ejs */
-.edit-list {
-  display: inline-block;
+#edit-ejs article {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.edit-list {
-  width: 250px;
+.edit-article {
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+
+/* list-details */
+.list-details {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 82px;
+  flex: 0 1;
+  width: 190px;
+  text-align: right;
+  min-height: 260px;
+  max-height: 300px
+}
+
+.list-details input {
+  width: 176px;
+  margin: 0px;
+  padding: 5px;
+}
+
+.list-details button {
+  width: 190px;
+  margin: 0px;
+  padding: 5px;
+  background: white;
+  color: black;
+}
+
+.list-details a {
+  color: black;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form input {
+  margin: 10px 0px;
+  border: 2px solid black;
+}
+
+.form button {
+  margin: 10px 0px 20px 0px;
+  height: 40px;
+  width: 40px;
+  border: 2px solid rgb(59, 59, 59);
+  color: rgb(59, 59, 59);
+  border-radius: 100%;
+  background: rgb(255, 255, 255);
+}
+
+.form button:hover {
+  border: 2px solid rgb(59, 59, 59, 0.8);
+  color: rgb(59, 59, 59, 0.8);
+}
+
+/* list-items */
+.list-items {
+  padding: 0px 82px;
+  flex: 0 2;
+  min-width: 190px;
 }
 
 .edit-list ul {
-  list-style: none;
   padding: 0px;
   display: flex;
   flex-direction: column;
 }
 
 .edit-list li {
-  padding: 5px;
+  padding: 15px;
   display: inline-block;
   width: 100%;
 }
 
-.edit-list li:hover {
-  padding: 5px;
+/* Media Queries */
+@media screen and (max-width: 803px) {
+
+  footer {
+    flex-direction: column;
+  }
+
+  .box {
+    padding: 5px 15px;
+    flex: 1 0 80px;
+    background: #222;
+    color: white;
+  }
+
+  .list-details {
+    text-align: center;
+    max-height: 200px
+  }
+
 }
