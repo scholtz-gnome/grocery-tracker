@@ -13,6 +13,12 @@
     <h2>Add items to list</h2>
     <h3><%= list.title %></h3>
     <button class="delete" data-doc="<%= list._id %>">Delete List</button>
+    <form action="/lists/edit/<%= list.id %>" method="post">
+      <div>
+        <label for="add"><button class="add"> + </button></label>
+        <input type="text" name="add" id="add" autofocus>
+      </div>
+    </form>
     <div class="edit-list">
       <ul>
         <% if (list.items.length === 0) { %>
@@ -25,12 +31,6 @@
         <% } %>
       </ul>
     </div>
-    <form action="/lists/edit/<%= list.id %>" method="post">
-      <div>
-        <label for="add"><button class="add"> + </button></label>
-        <input type="text" name="add" id="add" autofocus>
-      </div>
-    </form>
   </main>
 
   <%- include("../partials/footer.ejs") %>
