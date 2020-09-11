@@ -53,3 +53,29 @@ footer {
   background: #222;
   color: white;
 }
+
+/* edit.ejs */
+.edit-list {
+  display: inline-block;
+}
+
+.edit-list {
+  width: 250px;
+}
+
+.edit-list ul {
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-list li {
+  padding: 5px;
+  display: inline-block;
+  width: 100%;
+}
+
+.edit-list li:hover {
+  padding: 5px;
+}

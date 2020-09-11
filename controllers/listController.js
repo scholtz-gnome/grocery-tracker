@@ -48,11 +48,21 @@ const list_edit_delete = (req, res) => {
     .catch(err => console.log(err));
 }
 
+const list_edit_item_delete = (req, res) => {
+  const id = req.params.id;
+  List.findById(id)
+    .then(result => {
+      res.json();
+    })
+    .catch(err => console.log(err));
+}
+
 module.exports = {
   lists_view,
   list_create,
   list_create_post,
   list_edit,
   list_edit_post,
-  list_edit_delete
+  list_edit_delete,
+  list_edit_item_delete
 }

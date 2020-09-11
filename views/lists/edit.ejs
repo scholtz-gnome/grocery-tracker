@@ -13,13 +13,14 @@
     <h2>Add items to list</h2>
     <h3><%= list.title %></h3>
     <button class="delete" data-doc="<%= list._id %>">Delete List</button>
-    <div>
+    <div class="edit-list">
       <ul>
         <% if (list.items.length === 0) { %>
           <p>There are currently no items in this list</p>
         <% } else { %>
           <% list.items.forEach(item => { %>
-            <li><%= item %></li>
+            <li><button class="delete-item" data-id="<%= list._id %>" data-doc="<%= item %>">Delete</button><%= item %></li>
+            <%  %>
           <% }) %>
         <% } %>
       </ul>
@@ -46,6 +47,23 @@
     .then(response => response.json())
     .then(data => window.location.href = data.redirect)
     .catch(err => console.log(err));
+  });
+
+  const deleteItems = document.querySelectorAll("button.delete-item");
+
+  deleteItems.forEach(item => {
+    item.addEventListener("click", () => {
+      console.log(item.dataset.doc);
+      console.log(item.dataset.id);
+      const endpoint = `/lists/edit-item/${item.dataset.id}`;
+
+      fetch(endpoint, {
+        method: "DELETE"
+      })
+      .then(response => response.json())
+      .then(data => window.location.href = data.redirect)
+      .catch(err => console.log(err));
+    });
   });
 
   </script>

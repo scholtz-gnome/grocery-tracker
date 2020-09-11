@@ -8,5 +8,6 @@ listsRouter.get("/create", listController.list_create);
 listsRouter.get("/edit/:id", listController.list_edit);
 listsRouter.post("/edit/:id", listController.list_edit_post);
 listsRouter.delete("/edit/:id", listController.list_edit_delete);
+listsRouter.delete("/edit-item/:id", listController.list_edit_item_delete);
 
 module.exports = listsRouter;
