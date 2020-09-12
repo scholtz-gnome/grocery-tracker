@@ -42,7 +42,7 @@ nav {
 }
 
 nav a:hover {
-  color: white;
+  color: rgba(255, 255, 255, 0.664);
 }
 
 header {
@@ -156,19 +156,46 @@ footer {
 .list-items > div {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   width: 378.5px;
+  transition: background 300ms;
+}
+
+.list-row {
+  position: relative;
+  overflow: hidden;
 }
 
 .item {
-  flex: 1;
+  flex: 5;
   text-align: left;
   font-size: 17px;
 }
 
+.item-buttons {
+  flex: 2;
+}
+
+.list-items > div:hover {
+  background: rgba(231, 231, 231, 0.445);
+}
+
 /* options popup */
+.options {
+  background: rgb(255, 42, 42);
+  position: absolute;
+  left: 345px;
+  width: 35px;
+  color: white;
+  transition: left 300ms;
+}
+
 .hide {
-  opacity: 0;
+  /* opacity: 1; */
+  left: 425px;
+  position: absolute;
+  width: 37px;
+  color: white;
+  transition: left 900ms;
 }
 
 /* - - Media Queries - - */

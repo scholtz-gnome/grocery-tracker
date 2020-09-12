@@ -1,5 +1,5 @@
 const deleteList = document.querySelector("button.deleteList"); //get reference to delete list button
-const trashcans = document.querySelectorAll("button.trashcan"); //get reference to trashcan icon on each list item
+const trashcans = document.querySelectorAll("div.trashcan"); //get reference to trashcan icon on each list item
 
 const iconsOne = document.querySelectorAll(".fas");
 const iconTwo = document.querySelectorAll(".far");

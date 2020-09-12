@@ -41,19 +41,19 @@
 
                 <% list.items.forEach(item => { %>
 
-                  <div>
+                  <div class="list-row">
                     <div class="item">
                       <%= item %>
                     </div>
                       
-                    <div>
+                    <div class="item-buttons">
                       <i class="fas fa-ellipsis-h" data-item="<%= item %>"></i>
                     </div>
 
-                    <div class="options hide" data-item="<%= item %>">
-                      <button class="trashcan" data-id="<%= list._id %>" data-item="<%= item %>">
+                    <div class="item-buttons options hide" data-item="<%= item %>">
+                      <div class="trashcan" data-id="<%= list._id %>" data-item="<%= item %>">
                         <i class="far fa-trash-alt"></i>
-                      </button>
+                      </div>
                     </div>
                   </div>
 
