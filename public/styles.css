@@ -8,7 +8,6 @@ body {
 }
 
 /* Selecting all specified elements of kind */
-
 a {
   text-decoration: none;
 }
@@ -58,10 +57,6 @@ main {
   flex-direction: column;
 }
 
-main li {
-  min-height: 25px;
-}
-
 /* Footer Styles */
 footer {
   display: flex;
@@ -77,28 +72,29 @@ footer {
   text-align: center;
 }
 
-/* edit.ejs */
-#edit-ejs article {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.edit-article {
+/* - - - edit.ejs - - - */
+.edit-article { /* selects the ARTICLE element */
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
-/* list-details */
+/* list-details SECTION */
 .list-details {
   display: flex;
   flex-direction: column;
-  padding: 0px 82px;
+  padding: 0px 20px;
   flex: 0 1;
   width: 190px;
   text-align: right;
   min-height: 260px;
   max-height: 300px
+}
+
+.list-details h3 {
+  margin: 0px;
 }
 
 .list-details input {
@@ -148,32 +144,26 @@ footer {
   color: rgb(59, 59, 59, 0.8);
 }
 
-/* list-items */
+/* list-items SECTION */
 .list-items {
-  padding: 0px 82px;
-  flex: 0 2;
-  min-width: 190px;
-}
-
-.list-items p {
+  min-height: 60px;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
-.edit-list ul {
-  padding: 0px;
+.list-items > div {
   display: flex;
-  flex-direction: column;
-}
-
-.edit-list li {
-  padding: 15px;
-  display: inline-block;
-  width: 100%;
-}
-
-.edit-list ul li {
-  display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  width: 378.5px;
+}
+
+.item {
+  flex: 1;
+  text-align: left;
+  font-size: 17px;
 }
 
 /* options popup */
@@ -181,8 +171,8 @@ footer {
   opacity: 0;
 }
 
-/* Media Queries */
-@media screen and (max-width: 803px) {
+/* - - Media Queries - - */
+@media screen and (max-width: 720px) {
 
   footer {
     flex-direction: column;
