@@ -32,8 +32,5 @@ app.get("/about", (req, res) => res.render("about", { title: "ABOUT" }));
 // LISTS PAGE
 app.get("/lists", (req, res) => res.render("lists/lists", { title: "LISTS" }));
 
-// USER PAGE
-app.get("/user", (req, res) => res.render("user", { title: "USER" }));
-
 // 404 PAGE
 app.use((req, res) => res.status(404).render("404", { title: "ERROR - 404" }));
