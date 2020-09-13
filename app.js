@@ -19,8 +19,8 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use("/lists/", listRouter);
+app.use(express.json());
 app.use(authRouter);
-app.use(express.json()); // this takes any json data that comes along with a req and parses into a JS object
 
 // main routes
 // HOME PAGE
