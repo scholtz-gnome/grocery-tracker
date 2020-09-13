@@ -8,6 +8,7 @@ const listSchema = new Schema({
   },
   items: {
     type: Array,
+    required: true
   }
 }, { timestamps: true });
 

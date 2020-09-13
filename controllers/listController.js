@@ -11,18 +11,14 @@ const list_create = (req, res) => res.render("lists/create-list", { title: "CREA
 const list_create_post = (req, res) => {
   const list = new List(req.body);
   list.save()
-    .then(result => {
-      res.redirect("/lists/view");
-    })
+    .then(result => res.redirect("/lists/view"))
     .catch(err => console.log(err));
 }
 
 const list_edit = (req, res) => {
   const id = req.params.id;
   const list = List.findById(id)
-    .then(result => {
-      res.render("lists/edit", { title: result.title, list: result });
-    })
+    .then(result => res.render("lists/edit", { title: result.title, list: result }))
     .catch(err => console.log(err));
 }
 
@@ -31,20 +27,15 @@ const list_edit_post = (req, res) => {
     .then(result => {
       result.items.push(req.body.add)
       result.save()
-        .then(result => {
-          res.redirect(`/lists${req.url}`);
-        })
+        .then(result => res.redirect(`/lists${req.url}`))
         .catch(err => console.log(err));
     })
-    .catch(err => console.log(err));
 }
 
 const list_edit_delete = (req, res) => {
   const id = req.params.id;
   List.findByIdAndDelete(id)
-    .then(result => {
-      res.json({ redirect: "/lists/view" });
-    })
+    .then(result => res.json({ redirect: "/lists/view" }))
     .catch(err => console.log(err));
 }
 
