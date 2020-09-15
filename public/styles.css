@@ -13,13 +13,13 @@ a {
 
 ul {
   list-style-type: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
+  justify-content: space-evenly;
   padding: 0px;
 }
 
 li {
-  display: grid;
+  display: flex;
   justify-content: center;
 }
 
@@ -32,7 +32,7 @@ h2 {
 /* Nav Styles */
 nav {
   padding: 10px;
-  background: black;
+  background: #222
 }
 
 .navList {
@@ -40,16 +40,31 @@ nav {
   padding-left: 0px;
 }
 
-.navList li {
+.navList li a {
   color: white;
 }
 
 nav a:hover {
-  color: rgba(63, 141, 73, 0.664);
+  color: rgba(255, 255, 255, 0.664);
 }
 
 header {
   text-align: center;
+}
+
+/* Dashboard Styles */
+
+#profileImageContainer {
+  display: flex;
+  padding-left: 20vh;
+}
+
+#profileImage {
+  display: flex;
+  height: 250px;
+  width: 250px;
+  border: 5px solid black;
+  border-radius: 50%;
 }
 
 /* Main Styles */
@@ -58,21 +73,6 @@ main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-}
-
-/* Footer Styles */
-footer {
-  display: flex;
-}
-
-.box {
-  min-height: 50px;
-  max-height: 90px;
-  padding: 5px 15px;
-  flex: 1 0 100px;
-  background: #222;
-  color: white;
-  text-align: center;
 }
 
 /* - - - edit.ejs - - - */
@@ -199,6 +199,21 @@ footer {
   width: 37px;
   color: white;
   transition: left 900ms;
+}
+
+/* Footer Styles */
+footer {
+  display: flex;
+}
+
+.box {
+  min-height: 50px;
+  max-height: 90px;
+  padding: 5px 15px;
+  flex: 1 0 100px;
+  background: #222;
+  color: white;
+  text-align: center;
 }
 
 /* - - Media Queries - - */
