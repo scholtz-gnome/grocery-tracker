@@ -1,7 +1,10 @@
 # grocery-tracker
 An app made with HTML, CSS and JS. Tracks your grocery items like a typical to-do list, but it also calculates your expenses.
 
-## Set up
+# App Structure
+Grocery Tracker is built using the MVC web app architecture. This stands for **Model** - **Controller** - **View**. The model interacts with our database and defines the documents that our app interacts with. In this app, we have two models: a User model and a List model. 
+
+# Set up
 To run grocery tracker, ensure that you have Node.js installed. Once you've cloned this repository, in your terminal/command line, type `npm install`. This will look in the package.json file and install all the packages under `"dependencies"`. You'll also see the node_modules folder added to the grocery-tracker directory. 
 
 In your package.json file, under dependencies, you should have:
