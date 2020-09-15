@@ -1,6 +1,4 @@
-const List = require("../models/list.js");
-
-const lists = (req, res) => res.render("lists/lists", { title: "LISTS" });
+const List = require("../models/list");
 
 const lists_view = (req, res) => {
   List.find()
@@ -58,7 +56,6 @@ const list_edit_item_delete = (req, res) => {
 }
 
 module.exports = {
-  lists,
   lists_view,
   list_create,
   list_create_post,

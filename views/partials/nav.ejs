@@ -1,8 +1,15 @@
 <nav>
   <ul class="navList">
-    <li><a href="/dashboard">Dashboard</a></li>
+    <% if (user === null) { %>
+      <li><a href="/dashboard/">Dashboard</a></li>
+    <% } else { %>
+      <li><a href="/dashboard/<%= user.id %>">Dashboard</a></li>
+    <% } %>
     <li><a href="/lists/create">Create List</a></li>
     <li><a href="/lists/view">My Lists</a></li>
     <li><a href="">Account</a></li> <!--Should navigate to account menu.-->
+    <% if (user !== null) { %>
+      <li><a href="/logout">Logout</a></li> <!--I'm just putting this here for now, until we create a dropdown from Account-->
+    <% } %>
   </ul>
 </nav>

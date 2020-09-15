@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const listRouter = require("./routes/listRouter");
 const authRouter = require("./routes/authRouter");
 const dashboardRouter = require("./routes/dashboardRouter");
+const { requireAuth, checkUser } = require("./middleware/authMiddleware");
 
 // connect to DB 
 const dbURI = "mongodb+srv://olivia-scholtz:olivia-scholtz-password@node-tutorial.scb5o.mongodb.net/grocery-tracker?retryWrites=true&w=majority";
@@ -20,11 +21,12 @@ app.set("view engine", "ejs");
 // middleware & static files
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
-app.use("/lists/", listRouter);
-app.use(express.json());
 app.use(cookieParser());
+app.use(express.json());
 app.use(authRouter);
-app.use("/dashboard", dashboardRouter);
+app.use("*", checkUser);
+app.use("/lists/", listRouter);
+app.use("/dashboard/", dashboardRouter, requireAuth);
 
 // HOME PAGE
 app.get("/", (req, res) => res.render("index", { title: "HOME" }));
