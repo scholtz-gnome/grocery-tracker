@@ -1,10 +1,10 @@
 body {
   margin: 0px;
   font-family: 'Zilla Slab', serif;
-  background-image: url();
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-image: url("images/freshproduce.jpeg");
 }
 
 /* Selecting all specified elements of kind */
@@ -33,7 +33,7 @@ h2 {
 /* Nav Styles */
 nav {
   padding: 10px;
-  background: pink;
+  background: black;
 }
 
 .navList {
@@ -41,8 +41,12 @@ nav {
   padding-left: 0px;
 }
 
+.navList li {
+  color: white;
+}
+
 nav a:hover {
-  color: rgba(255, 255, 255, 0.664);
+  color: rgba(63, 141, 73, 0.664);
 }
 
 header {
