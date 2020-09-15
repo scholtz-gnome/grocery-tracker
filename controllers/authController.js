@@ -30,8 +30,8 @@ const signup_post = (req, res) => {
 
   user.save()
     .then(result => {
-      res.status(201).json(user);
-      // res.redirect("/lists/view");
+      // res.status(201).json(user);
+      res.redirect("/lists/view");
     })
     .catch(err => {
       const errors = handleErrors(err);

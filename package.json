@@ -18,6 +18,7 @@
   "homepage": "https://github.com/scholtz-gnome/grocery-tracker#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
+    "bcrypt": "^5.0.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "mongoose": "^5.10.4",
