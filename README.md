@@ -7,6 +7,7 @@ To run grocery tracker, ensure that you have Node.js installed. Once you've clon
 In your package.json file, under dependencies, you should have:
 ```json
 "dependencies": {
+  "@fortawesome/fontawesome-free": "^5.14.0",
   "bcrypt": "^5.0.0",
   "ejs": "^3.1.5",
   "express": "^4.17.1",
