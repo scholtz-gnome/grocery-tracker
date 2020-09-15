@@ -9,6 +9,7 @@ In your package.json file, under dependencies, you should have:
 "dependencies": {
   "@fortawesome/fontawesome-free": "^5.14.0",
   "bcrypt": "^5.0.0",
+  "cookie-parser": "^1.4.5",
   "ejs": "^3.1.5",
   "express": "^4.17.1",
   "mongoose": "^5.10.3",
@@ -19,6 +20,7 @@ In your package.json file, under dependencies, you should have:
 
 Find links to these packages and what they do:
 [bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme)
+[cookie-parser](https://github.com/expressjs/cookie-parser#readme)
 [ejs](https://ejs.co/)
 [express](https://expressjs.com/)
 [mongoose](https://mongoosejs.com/)

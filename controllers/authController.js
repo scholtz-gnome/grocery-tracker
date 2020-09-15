@@ -21,10 +21,6 @@ const handleErrors = (err) => {
   return errors;
 }
 
-const signup_get = (req, res) => {
-  res.render("auth/signup", { title: "SIGN UP" });
-}
-
 const signup_post = (req, res) => {
   const user = new User(req.body);
 
@@ -39,17 +35,11 @@ const signup_post = (req, res) => {
     });
 }
 
-const login_get = (req, res) => {
-  res.render("auth/login", { title: "LOGIN" });
-}
-
 const login_post = (req, res) => {
   res.save("posted to login");
 }
 
 module.exports = {
-  signup_get,
   signup_post,
-  login_get,
   login_post
 }

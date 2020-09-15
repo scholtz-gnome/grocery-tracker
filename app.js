@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 const listRouter = require("./routes/listRouter");
 const authRouter = require("./routes/authRouter");
+const dashboardRouter = require("./routes/dashboardRouter");
 
 // connect to DB 
 const dbURI = "mongodb+srv://olivia-scholtz:olivia-scholtz-password@node-tutorial.scb5o.mongodb.net/grocery-tracker?retryWrites=true&w=majority";
@@ -20,17 +22,31 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use("/lists/", listRouter);
 app.use(express.json());
+app.use(cookieParser());
 app.use(authRouter);
+app.use("/dashboard", dashboardRouter);
 
-// main routes
 // HOME PAGE
 app.get("/", (req, res) => res.render("index", { title: "HOME" }));
 
-// ABOUT PAGE
-app.get("/about", (req, res) => res.render("about", { title: "ABOUT" }));
+// cookies
+app.get("/set-cookies", (req, res) => {
 
-// LISTS PAGE
-app.get("/lists", (req, res) => res.render("lists/lists", { title: "LISTS" }));
+  res.cookie("newUser", false);
+  res.cookie("isEmployee", true, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true });
+
+  res.send("you got the cookies!");
+
+});
+
+app.get("/read-cookies", (req, res) => {
+
+  const cookies = req.cookies;
+  console.log(cookies.newUser);
+
+  res.json(cookies);
+
+});
 
 // 404 PAGE
 app.use((req, res) => res.status(404).render("404", { title: "ERROR - 404" }));

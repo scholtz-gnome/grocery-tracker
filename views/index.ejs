@@ -6,11 +6,30 @@
       <img src="images/freshproduce.jpeg">
     </div>
   <%- include("./partials/nav.ejs") %>
-  <header>
+
+  <header> <!-- the jumbotron and sign up form should be within the header -->
+
     <h1>Home Page</h1>
+
+    <form>
+      <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" required>
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+      <button type="submit" formmethod="POST" formaction="/signup">Sign Up</button>
+      <button type="submit" formmethod="POST" formaction="/login">Log In</button>
+    </form>
+
   </header>
+
   <main>
+    <h2>About Us</h2> <!-- the about us section should be within the main tag -->
   </main>
+
   <%- include("./partials/footer.ejs") %>
 </body>
 </html>
