@@ -4,7 +4,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-image: url("images/freshproduce.jpeg");
 }
 
 /* Selecting all specified elements of kind */
@@ -41,12 +40,8 @@ nav {
   padding-left: 0px;
 }
 
-.navList li {
-  color: white;
-}
-
 nav a:hover {
-  color: rgba(63, 141, 73, 0.664);
+  color: rgba(255, 255, 255, 0.664);
 }
 
 header {
