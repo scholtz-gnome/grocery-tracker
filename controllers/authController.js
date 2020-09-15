@@ -22,13 +22,21 @@ const handleErrors = (err) => {
   return errors;
 }
 
+const maxAge = 3 * 24 * 60 * 60;
+const createToken = (id) => {
+  return jwt.sign({ id }, "grocery-tracker-secret", {
+    expiresIn: maxAge
+  });
+}
+
 const signup_post = (req, res) => {
   const user = new User(req.body);
 
   user.save()
     .then(result => {
-      
-      res.redirect("/dashboard/");
+      const token = createToken(result._id);
+      res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000});
+      res.status(201).json({ user: user._id });
     })
     .catch(err => {
       const errors = handleErrors(err);
@@ -36,8 +44,16 @@ const signup_post = (req, res) => {
     });
 }
 
-const login_post = (req, res) => {
-  res.save("posted to login");
+const login_post = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await User.login(email, password);
+    res.status(200).json({ user: user._id });
+  }
+  catch (err) {
+    res.status(400).json({});
+  }
 }
 
 module.exports = {
