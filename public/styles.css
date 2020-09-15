@@ -4,7 +4,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-image: url("images/freshproduce.jpeg");
 }
 
 /* Selecting all specified elements of kind */

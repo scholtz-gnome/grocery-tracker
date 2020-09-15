@@ -2,6 +2,7 @@ const express = require("express");
 const listRouter = express.Router();
 const listController = require("../controllers/listController");
 
+listRouter.get("/", listController.lists);
 listRouter.get("/view", listController.lists_view);
 listRouter.post("/view", listController.list_create_post);
 listRouter.get("/create", listController.list_create);

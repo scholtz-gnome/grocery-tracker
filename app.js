@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const listRouter = require("./routes/listRouter");
 const authRouter = require("./routes/authRouter");
+const dashboardRouter = require("./routes/dashboardRouter");
 
 // connect to DB 
 const dbURI = "mongodb+srv://olivia-scholtz:olivia-scholtz-password@node-tutorial.scb5o.mongodb.net/grocery-tracker?retryWrites=true&w=majority";
@@ -21,16 +22,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/lists/", listRouter);
 app.use(express.json());
 app.use(authRouter);
+app.use("/dashboard", dashboardRouter);
 
-// main routes
 // HOME PAGE
 app.get("/", (req, res) => res.render("index", { title: "HOME" }));
-
-// ABOUT PAGE
-app.get("/about", (req, res) => res.render("about", { title: "ABOUT" }));
-
-// LISTS PAGE
-app.get("/lists", (req, res) => res.render("lists/lists", { title: "LISTS" }));
 
 // 404 PAGE
 app.use((req, res) => res.status(404).render("404", { title: "ERROR - 404" }));
