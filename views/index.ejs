@@ -2,36 +2,26 @@
 <html lang="en">
   <%- include("./partials/head.ejs") %>
 <body>
-    <div class="backgroundImage">
-      <img src="images/freshproduce.jpeg">
-    </div>
-  <%- include("./partials/nav.ejs") %>
-
   <header> <!-- the jumbotron and sign up form should be within the header -->
-
-    <h1>Home Page</h1>
-
+    <h1>Grocery Tracker <em>2.0</em></h1>
     <form>
-      <div>
+      <div class="formCallForInput">
         <label for="email">Email</label>
-        <input type="text" name="email" id="email" required>
+        <input class="formInputField" type="text" name="email" id="email" required>
         <div class="email error"></div>
       </div>
-      <div>
+      <div class="formCallForInput">
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
+        <input class="formInputField" type="password" name="password" id="password" required>
         <div class="password error"></div>
       </div>
       <button>Sign Up</button>
       <button>Log In</button>
     </form>
-
   </header>
-
   <main>
     <h2>About Us</h2> <!-- the about us section should be within the main tag -->
   </main>
-
   <%- include("./partials/footer.ejs") %>
   <script src="/form.js"></script> <!-- this file is in public -->
 </body>

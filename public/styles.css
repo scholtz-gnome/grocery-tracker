@@ -29,6 +29,18 @@ h2 {
   padding: 10px;
 }
 
+/* Sign-Up / Home Page Styles */
+
+.formCallForInput {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+.formInputField {
+  background-color: darkkhaki;
+}
+
 /* Nav Styles */
 nav {
   padding: 10px;
