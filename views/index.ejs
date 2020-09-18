@@ -3,8 +3,14 @@
   <%- include("./partials/head.ejs") %>
 <body>
   <header> <!-- the jumbotron and sign up form should be within the header -->
-    <h1>Grocery Tracker <em>2.0</em></h1>
-    <form>
+      <h1 class="groceryTrackerHeading">Grocery Tracker <em>2.0</em></h1>
+  </header>
+  <main id="signInMain">
+    <div class="aboutContainer">
+      <h2>About Us</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam laudantium nostrum deleniti accusantium est debitis laborum illum iste maxime unde quam eius, fugit consequuntur corrupti? Natus consequuntur error assumenda mollitia!</p> <!-- the about us section should be within the main tag -->
+    </div>
+    <form id="formSignInPage">
       <div class="formCallForInput">
         <label for="email">Email</label>
         <input class="formInputField" type="text" name="email" id="email" required>
@@ -18,9 +24,6 @@
       <button>Sign Up</button>
       <button>Log In</button>
     </form>
-  </header>
-  <main>
-    <h2>About Us</h2> <!-- the about us section should be within the main tag -->
   </main>
   <%- include("./partials/footer.ejs") %>
   <script src="/form.js"></script> <!-- this file is in public -->

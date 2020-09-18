@@ -31,6 +31,30 @@ h2 {
 
 /* Sign-Up / Home Page Styles */
 
+.groceryTrackerHeading {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#signInMain {
+  padding: 0px;
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.aboutContainer {
+  margin: 20px 100px 50px 200px;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+#formSignInPage {
+  background-color: rgb(187, 231, 137);
+  border: 3px #222 solid;
+  padding: 20px 30px 20px 30px;
+}
+
 .formCallForInput {
   display: flex;
   flex-direction: column;
