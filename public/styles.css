@@ -26,12 +26,23 @@ li {
 h2 {
   text-align: center;
   border: 2px dotted black;
-  padding: 10px;
+  border-radius: 30px;
+  padding: 15px 60px 15px 60px;
+}
+
+p {
+  font-size: 19px;
+  text-align: center;
 }
 
 /* Sign-Up / Home Page Styles */
 
+.bodySignInPage {
+  background-color: rgb(247, 255, 242);
+}
+
 .groceryTrackerHeading {
+  font-size: 40px;
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -47,22 +58,48 @@ h2 {
   width: 40%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.aboutContainer img {
+  width: 180px;
+  height: 200px;
 }
 
 #formSignInPage {
-  background-color: rgb(187, 231, 137);
-  border: 3px #222 solid;
-  padding: 20px 30px 20px 30px;
+  background-color: rgb(255, 212, 93);
+  border: 1.5px #222 solid;
+  border-radius: 30px;
+  margin: 70px 200px 140px 0px;
+  padding: 30px 40px 0px 40px;
+  height: 260px;
 }
 
 .formCallForInput {
   display: flex;
   flex-direction: column;
   align-content: flex-end;
+  padding-bottom: 30px;
+}
+
+.formCallForInput label {
+  font-size: 17px;
+  padding-bottom: 10px;
 }
 
 .formInputField {
-  background-color: darkkhaki;
+  background-color: white;
+  padding: 8px 25px;
+  border: 1.5px solid #222;
+  border-radius: 20px;
+}
+
+#formSignInPage button {
+  background-color: white;
+  margin: 10px 0px 0px 12px;
+  padding: 8px 15px;
+  border: 1.5px solid #222;
+  border-radius: 20px;
 }
 
 /* Nav Styles */
