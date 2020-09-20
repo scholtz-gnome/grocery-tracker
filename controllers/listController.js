@@ -2,11 +2,11 @@ const List = require("../models/list");
 
 const lists_view = (req, res) => {
   List.find()
-    .then(result => res.render("lists/view-lists.ejs", { title: "VIEW LISTS", result }))
+    .then(result => res.render("lists/view", { title: "VIEW LISTS", result }))
     .catch(err => console.log(err));
 }
 
-const list_create = (req, res) => res.render("lists/create-list", { title: "CREATE LIST" });
+const list_create = (req, res) => res.render("lists/create", { title: "CREATE LIST" });
 
 const list_create_post = (req, res) => {
   const list = new List(req.body);
