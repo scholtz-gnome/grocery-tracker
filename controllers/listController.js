@@ -11,7 +11,7 @@ const list_create = (req, res) => res.render("lists/create-list", { title: "CREA
 const list_create_post = (req, res) => {
   const list = new List(req.body);
   list.save()
-    .then(result => res.redirect("/lists"))
+    .then(result => res.redirect("/lists/view"))
     .catch(err => console.log(err));
 }
 
