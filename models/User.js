@@ -15,9 +15,6 @@ const userSchema = new Schema({
     type: String,
     required: [true, "Please enter a password."],
     minlength: [6, "Miniminum password length is 6 characters."]
-  },
-  lists: {
-    type: Array
   }
 });
 

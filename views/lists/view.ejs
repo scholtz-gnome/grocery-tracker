@@ -11,16 +11,14 @@
   
   <main>
     <div>
-      <% if (result.length === 0) { %>
-        <p>There are no lists to display</p>
-      <% } else { %>
-        <h2>Click on a list to edit it</h2>
-        <ul>
-          <% result.forEach(list => { %>
-          <li><a href="/lists/edit/<%= list.id %>"><%= list.title %></a></li>
-          <% }) %>
-        </ul>
-      <% } %>
+      <h2>Click on a list to edit it</h2>
+      <ul>
+        <% result.forEach(list => { %>
+          <% if (list.permissions.owner === user.email && result.length > 0) { %>
+            <li><a href="/lists/edit/<%= list.id %>"><%= list.title %></a></li>
+          <% } %>
+        <% }) %>
+      </ul>
     </div>
   </main>
 
