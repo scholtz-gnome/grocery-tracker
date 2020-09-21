@@ -25,8 +25,8 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(authRouter);
 app.use("*", checkUser);
-app.use("/lists/", listRouter);
-app.use("/dashboard/", dashboardRouter, requireAuth);
+app.use("/lists", listRouter);
+app.use("/dashboard", dashboardRouter, requireAuth);
 
 // HOME PAGE
 app.get("/", (req, res) => res.render("index", { title: "HOME" }));

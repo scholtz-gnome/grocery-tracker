@@ -9,6 +9,15 @@ const listSchema = new Schema({
   items: {
     type: Array,
     required: true
+  },
+  permissions: {
+    owner: {
+      type: String,
+      required: true
+    },
+    guests: {
+      type: Array
+    }
   }
 }, { timestamps: true });
 
