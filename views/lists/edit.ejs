@@ -11,12 +11,10 @@
   
   <main id="edit-ejs">
 
-    <h2>Add items to <%= list.title %></h2>
-
     <article class="edit-article">
       <section class="list-details">
 
-        <h3><%= list.title %></h3>
+        <h3>Add items to <%= list.title %>:</h3>
         <div class="form">
           <form action="/lists/edit/<%= list.id %>" method="post">
             <div>
@@ -36,7 +34,7 @@
       <section class="list-items">
             
               <% if (list.items.length === 0) { %>
-                <p>There are currently no items in this list</p>
+                <p>There are currently no items on this list</p>
               <% } else { %>
 
                 <% list.items.forEach(item => { %>
