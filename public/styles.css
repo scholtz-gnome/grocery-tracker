@@ -4,9 +4,11 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: rgb(247, 255, 242);
 }
 
 /* Selecting all specified elements of kind */
+
 a {
   text-decoration: none;
 }
@@ -28,6 +30,11 @@ h2 {
   border: 2px dotted black;
   border-radius: 30px;
   padding: 15px 60px 15px 60px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 24px;
 }
 
 p {
@@ -140,6 +147,32 @@ header {
   border-radius: 50%;
 }
 
+/* List Page Styles */
+#view-ejs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#create-ejs{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#edit-ejs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-article {
+  background-color: rgb(255, 212, 93);
+  border: 1.5px solid #222;
+  border-radius: 30px;
+  padding: 50px 5px 50px 5px;
+}
+
 /* Main Styles */
 main {
   padding: 20px 0px;
@@ -163,7 +196,7 @@ main {
   flex-direction: column;
   padding: 0px 20px;
   flex: 0 1;
-  width: 190px;
+  width: 190px; 
   text-align: right;
   min-height: 260px;
   max-height: 300px
