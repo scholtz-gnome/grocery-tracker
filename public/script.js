@@ -41,3 +41,10 @@ trashcans.forEach(trashcan => {
 
   });
 });
+
+// Beginning of each new word in input field to be a capital letter.
+// Give items check boxes.
+// Create another form for capturing brand names.
+// Make it so list item input field picks up captured brand names from database.
+// Options for storing lists with meta data?....to be able to have something to display stats on?
+// Create list; My lists; View lists; Edit lists -- can make navigating site confusing with having so many options.
