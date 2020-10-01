@@ -42,9 +42,18 @@ trashcans.forEach(trashcan => {
   });
 });
 
-// Beginning of each new word in input field to be a capital letter.
-// Give items check boxes.
+// 
+
+let addItemInputField = document.getElementById("add");
+
+addItemInputField.addEventListener("input", function(){
+  let firstLetter = addItemInputField.value[0];
+  let restOfWord = addItemInputField.value.slice(1, addItemInputField.value.length);
+  addItemInputField.value = `${firstLetter.toUpperCase()}${restOfWord}`;
+});
+
+// Use split string method. + map + slice ???
+
 // Create another form for capturing brand names.
 // Make it so list item input field picks up captured brand names from database.
 // Options for storing lists with meta data?....to be able to have something to display stats on?
-// Create list; My lists; View lists; Edit lists -- can make navigating site confusing with having so many options.

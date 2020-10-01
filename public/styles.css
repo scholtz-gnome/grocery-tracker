@@ -111,21 +111,23 @@ p {
 
 /* Nav Styles */
 nav {
-  padding: 10px;
   background: #222
 }
 
 .navList {
   font-size: 20px;
   padding-left: 0px;
+  margin: 0px;
 }
 
 .navList li a {
   color: white;
+  padding: 20px;
 }
 
 nav a:hover {
-  color: rgba(255, 255, 255, 0.664);
+  color: #222;
+  background-color: rgb(255, 212, 93);
 }
 
 header {
@@ -168,9 +170,9 @@ header {
 
 .edit-article {
   background-color: rgb(255, 212, 93);
-  border: 1.5px solid #222;
+  border: 3px solid #222;
   border-radius: 30px;
-  padding: 50px 5px 50px 5px;
+  padding: 50px 0px 50px 0px;
 }
 
 /* Main Styles */
@@ -282,6 +284,11 @@ main {
 
 .item-buttons {
   flex: 2;
+}
+
+.item-checkbox {
+  width: 2vw;
+  height: 2vh;
 }
 
 .list-items > div:hover {
