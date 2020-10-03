@@ -44,12 +44,22 @@ trashcans.forEach(trashcan => {
 
 // 
 
-let addItemInputField = document.getElementById("add");
+// let addItemInputField = document.getElementById("add");
 
-addItemInputField.addEventListener("input", function(){
-  let firstLetter = addItemInputField.value[0];
-  let restOfWord = addItemInputField.value.slice(1, addItemInputField.value.length);
-  addItemInputField.value = `${firstLetter.toUpperCase()}${restOfWord}`;
+// addItemInputField.addEventListener("input", function(){
+//   let firstLetter = addItemInputField.value[0];
+//   let restOfWord = addItemInputField.value.slice(1, addItemInputField.value.length);
+//   addItemInputField.value = `${firstLetter.toUpperCase()}${restOfWord}`;
+// });
+
+const addInput = document.querySelector("input");
+
+addInput.addEventListener("input", (e) => {
+  const words = addInput.value.split(" ").map(word => {
+    word = `${word[0].toUpperCase()}${word.slice(1, word.length)}`;
+    return word;
+  }).join(" ");
+  addInput.value = words;
 });
 
 // Use split string method. + map + slice ???
