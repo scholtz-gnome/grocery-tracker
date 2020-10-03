@@ -62,8 +62,6 @@ addInput.addEventListener("input", (e) => {
   addInput.value = words;
 });
 
-// Use split string method. + map + slice ???
-
 // Create another form for capturing brand names.
 // Make it so list item input field picks up captured brand names from database.
 // Options for storing lists with meta data?....to be able to have something to display stats on?
