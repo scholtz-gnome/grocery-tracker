@@ -111,23 +111,30 @@ p {
 
 /* Nav Styles */
 nav {
-  background: #222
+  background: #222;
 }
 
 .navList {
+  display: flex;
   font-size: 20px;
   padding-left: 0px;
   margin: 0px;
 }
 
+.navList li {
+  flex-grow: 1;
+}
+
+.navList li a:hover {
+  background-color: rgb(247, 255, 242);
+  color: #222;
+}
+
 .navList li a {
   color: white;
   padding: 20px;
-}
-
-nav a:hover {
-  color: #222;
-  background-color: rgb(255, 212, 93);
+  width: 100%;
+  text-align: center;
 }
 
 header {
