@@ -62,6 +62,28 @@ addInput.addEventListener("input", (e) => {
   addInput.value = words;
 });
 
+// Navbar highlight once on page.
+
+const listAnchor = document.querySelectorAll(".navList");
+console.log(listAnchor);
+
+for(let i = 0; i < listAnchor.length; i++){
+    listAnchor[i].addEventListener("click", function(){
+      console.log("clicked");
+      listAnchor[i].classList.toggle("highlight");  // Need to keep it highlighted.
+    });
+}
+
+// Annoying code on each list item.
+
+const listItem = document.querySelectorAll(".item");
+console.log(listItem);
+
+listItem.forEach(item => {
+  item.innerText = `Dis is zi item you typed in zi box yah?!`;
+});
+
+// Add grocery list items prices & total.
 // Create another form for capturing brand names.
 // Make it so list item input field picks up captured brand names from database.
 // Options for storing lists with meta data?....to be able to have something to display stats on?
