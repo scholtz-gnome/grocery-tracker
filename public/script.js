@@ -83,6 +83,7 @@ listItem.forEach(item => {
   item.innerText = `Dis is zi item you typed in zi box yah?!`;
 });
 
+// Create an html template for each list, placing a border around each item.
 // Add grocery list items prices & total.
 // Create another form for capturing brand names.
 // Make it so list item input field picks up captured brand names from database.

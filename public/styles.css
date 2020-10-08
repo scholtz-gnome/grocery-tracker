@@ -196,6 +196,20 @@ main {
   flex-direction: column;
 }
 
+/* View List Styles */
+
+#view-ejs ul {
+  display: flex;
+  flex-direction: column;
+}
+
+#view-ejs ul li {
+  font-size: 20px;
+  margin-top: 25px;
+  padding: 5px;
+  border: 0.6px solid #222;
+}
+
 /* - - - edit.ejs - - - */
 .edit-article { /* selects the ARTICLE element */
   width: 90%;
@@ -223,16 +237,17 @@ main {
 
 .list-details input {
   width: 176px;
-  margin: 0px;
   padding: 5px;
+  border-radius: 15px;
 }
 
 .list-details button {
   width: 190px;
-  margin: 0px;
+  margin-bottom: 10px;
   padding: 5px;
   background: white;
   color: black;
+  border-radius: 15px;
 }
 
 .list-details a {
