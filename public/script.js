@@ -77,7 +77,6 @@ for(let i = 0; i < listAnchor.length; i++){
 // Annoying code on each list item.
 
 const listItem = document.querySelectorAll(".item");
-console.log(listItem);
 
 listItem.forEach(item => {
   item.innerText = `Dis is zi item you typed in zi box yah?!`;
