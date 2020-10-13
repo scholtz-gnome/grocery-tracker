@@ -28,7 +28,7 @@ li {
 h2 {
   text-align: center;
   border: 2px dotted black;
-  border-radius: 30px;
+  border-radius: 20px;
   padding: 15px 60px 15px 60px;
 }
 
@@ -126,15 +126,15 @@ nav {
   flex-grow: 1;
 }
 
-/* .navList li a:hover {
-  background-color: rgb(247, 255, 242);
-  color: #222;
-} */
-
-.highlight {
+.navList li a:hover {
   background-color: rgb(247, 255, 242);
   color: #222;
 }
+
+/* .highlight {
+  background-color: rgb(247, 255, 242);
+  color: #222;
+} */
 
 .navList li a {
   color: white;
