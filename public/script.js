@@ -64,13 +64,13 @@ addInput.addEventListener("input", (e) => {
 
 // Navbar highlight once on page.
 
-const listAnchor = document.querySelectorAll(".navList");
+const listAnchor = document.querySelectorAll(".navList li a");
 console.log(listAnchor);
 
 for(let i = 0; i < listAnchor.length; i++){
     listAnchor[i].addEventListener("click", function(){
       console.log("clicked");
-      listAnchor[i].classList.toggle("highlight");  // Need to keep it highlighted.
+      listAnchor[i].classList.add("highlight");  // Need to keep it highlighted.
     });
 }
 
