@@ -4,12 +4,11 @@
 <body>
   <%- include("../partials/nav.ejs") %>
   <header>
-    <h1>My Shopping Lists</h1>
+    <h2>Click on a list to edit it</h2>
   </header>
   
   <main id="view-ejs">
     <div>
-      <h2>Click on a list to edit it</h2>
       <ul>
         <% result.forEach(list => { %>
           <% if (list.permissions.owner === user.email && result.length > 0) { %>

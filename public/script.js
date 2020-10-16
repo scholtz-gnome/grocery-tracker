@@ -42,8 +42,6 @@ trashcans.forEach(trashcan => {
   });
 });
 
-// 
-
 // let addItemInputField = document.getElementById("add");
 
 // addItemInputField.addEventListener("input", function(){
@@ -62,22 +60,7 @@ addInput.addEventListener("input", (e) => {
   addInput.value = words;
 });
 
-// Navbar highlight once on page.
-
-// const listAnchors = document.querySelectorAll(".navList li a");
-
-// for(let i = 0; i < listAnchors.length; i++){
-//     listAnchors[i].addEventListener("click", function(){
-//       console.log("clicked");
-//       listAnchors[i].classList.add("highlight");  // Need to keep it highlighted.
-//     });
-// }
-
-// Dropdown menu
-
-const accountDropdownMenu = document.querySelector("#account-dropdown-menu span");
-console.log(accountDropdownMenu);
-
+// Take away blue border when input fields are clicked.
 // Create an html template for each list, placing a border around each item.
 // Add grocery list items prices & total.
 // Create another form for capturing brand names.
