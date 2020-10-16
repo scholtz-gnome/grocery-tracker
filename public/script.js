@@ -64,23 +64,19 @@ addInput.addEventListener("input", (e) => {
 
 // Navbar highlight once on page.
 
-const listAnchor = document.querySelectorAll(".navList li a");
-console.log(listAnchor);
+// const listAnchors = document.querySelectorAll(".navList li a");
 
-for(let i = 0; i < listAnchor.length; i++){
-    listAnchor[i].addEventListener("click", function(){
-      console.log("clicked");
-      listAnchor[i].classList.add("highlight");  // Need to keep it highlighted.
-    });
-}
+// for(let i = 0; i < listAnchors.length; i++){
+//     listAnchors[i].addEventListener("click", function(){
+//       console.log("clicked");
+//       listAnchors[i].classList.add("highlight");  // Need to keep it highlighted.
+//     });
+// }
 
-// Annoying code on each list item.
+// Dropdown menu
 
-const listItem = document.querySelectorAll(".item");
-
-listItem.forEach(item => {
-  item.innerText = `Dis is zi item you typed in zi box yah?!`;
-});
+const accountDropdownMenu = document.querySelector("#account-dropdown-menu span");
+console.log(accountDropdownMenu);
 
 // Create an html template for each list, placing a border around each item.
 // Add grocery list items prices & total.
